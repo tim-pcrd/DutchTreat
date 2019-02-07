@@ -3,10 +3,13 @@
   <PropertyGroup>
     <TargetFramework>netcoreapp2.2</TargetFramework>
     <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+    <TypeScriptToolsVersion>3.1</TypeScriptToolsVersion>
   </PropertyGroup>
 
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="8.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="6.0.0" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.2.0" />
@@ -16,6 +19,94 @@
 
   <ItemGroup>
     <None Include="node_modules/**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Remove="%2a%2a\**" />
+    <Content Remove="%2a%2a\**" />
+    <EmbeddedResource Remove="%2a%2a\**" />
+    <None Remove="%2a%2a\**" />
+    <None Remove="node_modules\**" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Remove="%2a%2a/%2a.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Remove="%2a%2a\%2a.config" />
+    <Content Remove="%2a%2a\%2a.cshtml" />
+    <Content Remove="%2a%2a\%2a.json" />
+    <Content Remove="wwwroot\ts\main.ts" />
+    <Content Remove="wwwroot\ts\storecustomer.ts" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <EmbeddedResource Remove="%2a%2a/%2a.resx" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AppController.cs" />
+    <Compile Include="Controllers\OrderItemsController.cs" />
+    <Compile Include="Controllers\OrdersController.cs" />
+    <Compile Include="Controllers\ProductsController.cs" />
+    <Compile Include="Data\DutchContext.cs" />
+    <Compile Include="Data\DutchMappingProfile.cs" />
+    <Compile Include="Data\DutchRepository.cs" />
+    <Compile Include="Data\DutchSeeder.cs" />
+    <Compile Include="Data\Entities\Order.cs" />
+    <Compile Include="Data\Entities\OrderItem.cs" />
+    <Compile Include="Data\Entities\Product.cs" />
+    <Compile Include="Data\Entities\StoreUser.cs" />
+    <Compile Include="Data\IDutchRepository.cs" />
+    <Compile Include="Data\Migrations\20190131213857_InitialDb.cs" />
+    <Compile Include="Data\Migrations\20190131213857_InitialDb.Designer.cs" />
+    <Compile Include="Data\Migrations\20190131220329_SeedData.cs" />
+    <Compile Include="Data\Migrations\20190131220329_SeedData.Designer.cs" />
+    <Compile Include="Data\Migrations\20190205215610_Identity.cs" />
+    <Compile Include="Data\Migrations\20190205215610_Identity.Designer.cs" />
+    <Compile Include="Data\Migrations\DutchContextModelSnapshot.cs" />
+    <Compile Include="Pages\Error.cshtml.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Services\IMailService.cs" />
+    <Compile Include="Services\NullMailService.cs" />
+    <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\ContactViewModel.cs" />
+    <Compile Include="ViewModels\LoginViewModel.cs" />
+    <Compile Include="ViewModels\OrderItemViewModel.cs" />
+    <Compile Include="ViewModels\OrderViewModel.cs" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <Content Include="appsettings.Development.json" />
+    <Content Include="appsettings.json" />
+    <Content Include="Data\art.json" />
+    <Content Include="package-lock.json" />
+    <Content Include="package.json" />
+    <Content Include="Pages\Error.cshtml" />
+    <Content Include="Pages\_ViewStart.cshtml" />
+    <Content Include="Properties\launchSettings.json" />
+    <Content Include="Views\Account\Login.cshtml" />
+    <Content Include="Views\App\About.cshtml" />
+    <Content Include="Views\App\Contact.cshtml" />
+    <Content Include="Views\App\Index.cshtml" />
+    <Content Include="Views\App\Shop.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\_ViewImports.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <TypeScriptCompile Include="wwwroot\ts\main.ts" />
+    <TypeScriptCompile Include="wwwroot\ts\storecustomer.ts" />
   </ItemGroup>
   
 
