@@ -6,11 +6,11 @@ $(document).ready(function() {
     var theForm = $("#theForm");
     theForm.hide();
 
-    var button = $("#buyButton");
-    button.on("click",
-        () => {
-            console.log("Buying item");
-        });
+    //var button = $("#buyButton");
+    //button.on("click",
+    //    () => {
+    //        console.log("Buying item");
+    //    });
 
     var productInfo = $(".product-props li");
     productInfo.on("click",

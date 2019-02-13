@@ -22,7 +22,7 @@
   </ItemGroup>
 
 
-  <ItemGroup>
+  <!--<ItemGroup>
     <Compile Remove="%2a%2a\**" />
     <Content Remove="%2a%2a\**" />
     <EmbeddedResource Remove="%2a%2a\**" />
@@ -108,6 +108,11 @@
     <TypeScriptCompile Include="wwwroot\ts\main.ts" />
     <TypeScriptCompile Include="wwwroot\ts\storecustomer.ts" />
   </ItemGroup>
+
+
+  <ItemGroup>
+    <Folder Include="ClientApp\" />
+  </ItemGroup>-->
   
 
 </Project>

@@ -80,5 +80,18 @@ namespace DutchTreat.Data
 
             return _context.Orders.Where(o => o.User.UserName == username).ToList();
         }
+
+        public void AddOrder(Order newOrder)
+        {
+            //convert new products to lookup of product
+            foreach (var item in newOrder.Items)
+            {
+                item.Product = _context.Products.Find(item.Product.Id);
+            }
+
+            AddEntity(newOrder);
+        }
+
+        
     }
 }
